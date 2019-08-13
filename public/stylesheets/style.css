@@ -1,0 +1,22 @@
+body{
+  padding: 50px;
+  font: 14px "helvetica Neue"
+}
+a{
+  color:#00b7ff;
+}
+.photo{
+  display: inline-block;
+  margin: 5px;
+  padding:10px;
+  border:1px solid #ddd;
+}
+.photo h2{
+  margin:0;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 200;
+}
+.photo img{
+  height: 100px;
+}
