@@ -9,5 +9,4 @@ router.get('/', function(req, res, next) {
   res.statusCode = 301;
   res.end()
 });
-
 module.exports = router;
