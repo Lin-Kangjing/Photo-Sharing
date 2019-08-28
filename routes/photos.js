@@ -1,5 +1,4 @@
-// var express = require('express');
-// var router = express.Router();
+
 const Photo = require('../models/Photo')
 
 exports.form = (req,res)=>{
