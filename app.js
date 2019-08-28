@@ -6,8 +6,9 @@ var logger = require('morgan');
 
 var mongoose = require('mongoose') 
 
-var indexRouter = require('./routes/index');
-const photos = require('./routes/photos')
+const indexRouter = require('./routes/index');
+const photosRouter = require('./routes/photos')
+const uploadRouter = require('./routes/upload')
 
 var app = express();
 
@@ -23,9 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/photos', photos.list);
-app.get('/upload',photos.form)
-app.post('/upload',photos.submit(app.get('photos')))
+app.use('/photos', photosRouter);
+app.use('/upload', uploadRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
