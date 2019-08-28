@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var mongoose = require('mongoose') 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const photos = require('./routes/photos')
@@ -43,8 +45,17 @@ app.use(function(err, req, res, next) {
 })
 
 const port = 4000
-app.listen(port, () => {
-  console.log(`server running @ http://localhost:${port}`);
-});
+
+mongoose.connect('mongodb://localhost/photo_app',function(err){
+  if(err){
+    console.log('数据库连接失败');
+  }else{
+    console.log('数据库连接成功');
+    app.listen(port, () => {
+      console.log(`server running @ http://localhost:${port}`);
+    });
+  }
+})
+
 
 module.exports = app;

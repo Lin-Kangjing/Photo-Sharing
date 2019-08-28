@@ -29,9 +29,9 @@ exports.submit =(dir)=>{
   }
 }
 exports.list = (req,res,next)=>{
-  console.log(11111111,Photo);
   Photo.find({},(err,photos)=>{
     if(err)return next(err)
+    console.log(photos)
     res.render('photos',{
       title:'Photos',
       photos:photos

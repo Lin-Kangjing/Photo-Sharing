@@ -1,9 +1,6 @@
-import mongoose from 'mongoose'
-mongoose.connect('mongodb://localhost/photo_app')
-
+var mongoose = require('mongoose')
 const schema = new mongoose.Schema({
   name:String,
   path:String
 })
-
-export default mongoose.model('Photo',schema)
+module.exports = mongoose.model('Photo',schema)
